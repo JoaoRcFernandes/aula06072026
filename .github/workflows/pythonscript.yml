@@ -50,4 +50,6 @@ jobs:
     - name: Send greeting
       run: |
             mkdir "${{ inputs.nome_pasta }}"
-            echo "print('${{ inputs.mensagem }}')" > ${{ inputs.nome_ficheiro }}
+            cd "${{ inputs.nome_pasta}}"
+            echo "print('${{ inputs.mensagem }}')" > ${{ inputs.nome_ficheiro }}.py
+            python ${{ inputs.nome_ficheiro }}.py
